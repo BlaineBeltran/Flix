@@ -13,4 +13,5 @@ struct Movie {
     let title: String
     let description: String
     var imageURL: String
+    var backgroundImageURL: String
 }
