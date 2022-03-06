@@ -58,7 +58,7 @@ class MovieService {
             
             if let error = error {
                 print(error.localizedDescription)
-            } else if let data = data {
+            } else if let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                 
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
                 let movieData = dataDictionary["results"] as! [[String:Any]]
